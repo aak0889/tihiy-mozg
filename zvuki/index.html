@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Коричневый шум, розовый шум, дождь и лес онлайн · Тихий мозг</title>
+<meta name="description" content="Коричневый и розовый шум, дождь и лес прямо в браузере. Своя громкость у каждого звука, таймер выключения и понятная кнопка остановки. Без регистрации и рекламы.">
+<link rel="canonical" href="https://xn--c1ahcafso1a2a.xn--p1ai/zvuki/">
+<meta name="theme-color" content="#1D2621">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Тихий мозг">
+<meta property="og:title" content="Звуки: коричневый и розовый шум, дождь, лес">
+<meta property="og:description" content="Коричневый и розовый шум, дождь и лес прямо в браузере. Своя громкость у каждого звука, таймер выключения и понятная кнопка остановки. Без регистрации и рекламы.">
+<meta property="og:url" content="https://xn--c1ahcafso1a2a.xn--p1ai/zvuki/">
+<meta property="og:image" content="https://xn--c1ahcafso1a2a.xn--p1ai/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/tools.css">
+<script>
+  (function () {
+    var d = document.documentElement, t = null, q = null;
+    try { t = localStorage.getItem('tm-theme'); q = localStorage.getItem('tm-quiet'); } catch (e) {}
+    if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+    if (!q) q = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches ? 'on' : 'off';
+    d.setAttribute('data-quiet', q);
+  })();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержанию</a>
+
+<header class="top" id="top">
+  <div class="wrap top__inner">
+    <a class="brand" href="../" aria-label="Тихий мозг, на главную">
+      <svg class="brand__mark" viewBox="0 0 64 32" aria-hidden="true"><path d="M4 22 C8 8 11 4 14 6 S19 28 24 26 S31 15 37 16 S44 18 48 18" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><circle cx="57" cy="18" r="4.2" class="dot"/></svg>
+    </a>
+    <nav class="top__nav" aria-label="Разделы"><a href="../#instrumenty">Инструменты</a></nav>
+    <div class="toggles">
+      <button class="toggle" id="quietBtn" type="button" aria-pressed="false" title="Убрать движение на странице">Без движения</button>
+      <button class="toggle toggle--icon" id="themeBtn" type="button" aria-label="Светлая тема" title="Сменить тему">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap wrap--text">
+    <header class="page-head">
+      <p class="crumbs"><a href="../">Тихий мозг</a> · инструмент</p>
+      <h1>Звуки</h1>
+      <p class="lead">Ровный фон, который закрывает мелкие шумы вокруг. Звуки можно смешивать. Начинай с тихой громкости.</p>
+    </header>
+  </div>
+
+  <section class="tool" aria-label="Фоновые звуки">
+    <div class="wrap wrap--mid">
+      <div class="sounds">
+        <article class="snd" data-sound="brown">
+          <h3>Коричневый шум</h3>
+          <p>Низкий и мягкий, похож на далёкий водопад или гул самолёта.</p>
+          <button class="btn btn--sm btn--solid" type="button" aria-pressed="false">Включить</button>
+          <div class="range"><label class="visually-hidden" for="v-brown">Громкость: коричневый шум</label><input type="range" id="v-brown" min="0" max="100" step="5" value="15"><output for="v-brown">15%</output></div>
+        </article>
+        <article class="snd" data-sound="pink">
+          <h3>Розовый шум</h3>
+          <p>Светлее коричневого, ровный, как шум в ракушке или лёгкий ветер.</p>
+          <button class="btn btn--sm btn--solid" type="button" aria-pressed="false">Включить</button>
+          <div class="range"><label class="visually-hidden" for="v-pink">Громкость: розовый шум</label><input type="range" id="v-pink" min="0" max="100" step="5" value="15"><output for="v-pink">15%</output></div>
+        </article>
+        <article class="snd" data-sound="rain">
+          <h3>Дождь</h3>
+          <p>Ровный дождь за окном с редкими каплями.</p>
+          <button class="btn btn--sm btn--solid" type="button" aria-pressed="false">Включить</button>
+          <div class="range"><label class="visually-hidden" for="v-rain">Громкость: дождь</label><input type="range" id="v-rain" min="0" max="100" step="5" value="15"><output for="v-rain">15%</output></div>
+        </article>
+        <article class="snd" data-sound="forest">
+          <h3>Лес</h3>
+          <p>Ветер в листве и далёкие птицы, изредка.</p>
+          <button class="btn btn--sm btn--solid" type="button" aria-pressed="false">Включить</button>
+          <div class="range"><label class="visually-hidden" for="v-forest">Громкость: лес</label><input type="range" id="v-forest" min="0" max="100" step="5" value="15"><output for="v-forest">15%</output></div>
+        </article>
+      </div>
+
+      <div class="tool__box" style="margin-top:14px">
+        <div class="tool__row">
+          <span class="label" id="sleep-l" style="margin:0">Выключить через</span>
+          <div class="seg" id="sleepSeg" role="group" aria-labelledby="sleep-l">
+            <button type="button" data-min="0" aria-pressed="true">Не выключать</button>
+            <button type="button" data-min="15" aria-pressed="false">15 мин</button>
+            <button type="button" data-min="30" aria-pressed="false">30 мин</button>
+            <button type="button" data-min="60" aria-pressed="false">60 мин</button>
+          </div>
+        </div>
+        <p class="tool__hint" id="sleepLeft" role="status"></p>
+        <div class="tool__row">
+          <button class="btn" type="button" id="stopAll" disabled>Остановить всё</button>
+          <button class="linkish" type="button" id="sndErase">Стереть настройки</button>
+        </div>
+        <div class="confirm" id="sndConfirm" hidden>
+          <p>Стереть сохранённую громкость из этого браузера?</p>
+          <button class="btn btn--sm btn--solid" type="button" data-yes>Да, стереть</button>
+          <button class="btn btn--sm" type="button" data-no>Нет, оставить</button>
+        </div>
+        <p class="tool__msg" id="sndNote" role="status"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="how-h">
+    <div class="wrap wrap--text">
+      <h2 id="how-h">Как это устроено</h2>
+      <ul class="points">
+        <li>Звуки не записаны заранее: браузер создаёт их сам, прямо сейчас. Поэтому они не повторяются кусками и работают без интернета, если страница уже открыта.</li>
+        <li>Звук включается только по кнопке и нарастает плавно. Громкость по умолчанию 15%. В наушниках начни ещё тише.</li>
+        <li>Таймер выключения плавно убавляет звук за последние 30 секунд. Удобно, чтобы уснуть.</li>
+        <li>Пока что-то играет, внизу экрана видна кнопка «Остановить звук».</li>
+        <li>В браузере хранится только громкость каждого звука.</li>
+      </ul>
+      <p class="block__text">Если вокруг слишком много всего сразу, загляни в <a href="../sensornaya-komnata/">Сенсорную комнату</a>. Для работы отрезками есть <a href="../fokus/">Фокус</a>.</p>
+      <p class="updated">Текст обновлён: 4 ноября 2026</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap wrap--text">
+    <div class="foot__line" aria-hidden="true"><span></span></div>
+    <nav class="foot__nav" aria-label="Инструменты">
+      <a href="../">Главная</a>
+      <a href="../shag/">Сделай шаг</a>
+      <a href="../fokus/">Фокус</a>
+      <a href="../parkovka/">Парковка мыслей</a>
+      <a href="../sensornaya-komnata/">Сенсорная комната</a>
+      <a href="../kuda-obratitsya/">Куда обратиться</a>
+    </nav>
+    <p class="foot__disclaimer" id="disclaimer"><strong>Тихий мозг — медиа и простые инструменты, а не медицинская услуга.</strong> Материалы не заменяют консультацию врача и медицинскую помощь. Если состояние ухудшается или ты в кризисе, обратись за профессиональной или экстренной помощью: <a href="tel:112">112</a>. Телефон доверия (бесплатно, круглосуточно): <a href="tel:88002000122">8-800-2000-122</a>.</p>
+    <p class="foot__small">Связаться: <a href="mailto:aak0889@yandex.ru">aak0889@yandex.ru</a></p>
+    <p class="foot__small">© 2026 Тихий мозг, тихиймозг.рф</p>
+  </div>
+</footer>
+
+<div class="soundbar" id="soundbar" role="region" aria-label="Звук" hidden><span></span><button type="button">Остановить звук</button></div>
+<script src="../js/base.js" defer></script>
+<script src="../js/sound.js" defer></script>
+<script src="../js/zvuki.js" defer></script>
+</body>
+</html>

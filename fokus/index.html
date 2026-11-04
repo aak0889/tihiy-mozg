@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Фокус — спокойный таймер 25/5 без тревожных цифр · Тихий мозг</title>
+<meta name="description" content="Таймер 15/3, 25/5 или 50/10 с паузой и пропуском. Тихий звук в конце, спокойная анимация «тихого присутствия», фоновый шум по желанию. Без регистрации.">
+<link rel="canonical" href="https://xn--c1ahcafso1a2a.xn--p1ai/fokus/">
+<meta name="theme-color" content="#1D2621">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Тихий мозг">
+<meta property="og:title" content="Фокус — спокойный таймер для работы и перерывов">
+<meta property="og:description" content="Таймер 15/3, 25/5 или 50/10 с паузой и пропуском. Тихий звук в конце, спокойная анимация «тихого присутствия», фоновый шум по желанию. Без регистрации.">
+<meta property="og:url" content="https://xn--c1ahcafso1a2a.xn--p1ai/fokus/">
+<meta property="og:image" content="https://xn--c1ahcafso1a2a.xn--p1ai/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/tools.css">
+<script>
+  (function () {
+    var d = document.documentElement, t = null, q = null;
+    try { t = localStorage.getItem('tm-theme'); q = localStorage.getItem('tm-quiet'); } catch (e) {}
+    if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+    if (!q) q = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches ? 'on' : 'off';
+    d.setAttribute('data-quiet', q);
+  })();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержанию</a>
+
+<header class="top" id="top">
+  <div class="wrap top__inner">
+    <a class="brand" href="../" aria-label="Тихий мозг, на главную">
+      <svg class="brand__mark" viewBox="0 0 64 32" aria-hidden="true"><path d="M4 22 C8 8 11 4 14 6 S19 28 24 26 S31 15 37 16 S44 18 48 18" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><circle cx="57" cy="18" r="4.2" class="dot"/></svg>
+    </a>
+    <nav class="top__nav" aria-label="Разделы"><a href="../#instrumenty">Инструменты</a></nav>
+    <div class="toggles">
+      <button class="toggle" id="quietBtn" type="button" aria-pressed="false" title="Убрать движение на странице">Без движения</button>
+      <button class="toggle toggle--icon" id="themeBtn" type="button" aria-label="Светлая тема" title="Сменить тему">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap wrap--text">
+    <header class="page-head">
+      <p class="crumbs"><a href="../">Тихий мозг</a> · инструмент</p>
+      <h1>Фокус</h1>
+      <p class="lead">Отрезок работы, потом перерыв. Без красных цифр и спешки. Если отвлёкся, просто вернись.</p>
+    </header>
+  </div>
+
+  <section class="tool" aria-label="Таймер фокуса">
+    <div class="wrap wrap--text">
+      <div class="tool__box focus">
+        <div class="seg" id="fPreset" role="group" aria-label="Длительность: работа и перерыв в минутах">
+          <button type="button" data-p="15" aria-pressed="false">15 / 3</button>
+          <button type="button" data-p="25" aria-pressed="true">25 / 5</button>
+          <button type="button" data-p="50" aria-pressed="false">50 / 10</button>
+        </div>
+        <p class="tool__hint" id="fBusy" role="status"></p>
+
+        <div class="ring" id="ring">
+          <span class="presence" aria-hidden="true"></span>
+          <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="track" cx="50" cy="50" r="47"/><circle class="arc" id="arc" cx="50" cy="50" r="47"/></svg>
+          <span class="ring__orbit" aria-hidden="true"></span>
+          <div class="ring__in">
+            <span class="ring__time" id="fTime" role="timer" aria-live="off">25:00</span>
+            <span class="ring__phase" id="fPhase">Готово к старту</span>
+          </div>
+        </div>
+        <p class="presence-line" id="fLine" aria-live="polite"></p>
+
+        <div class="focus__ctrl">
+          <button class="btn btn--solid" type="button" id="fStart">Начать</button>
+          <button class="btn" type="button" id="fSkip" hidden>Пропустить</button>
+          <button class="btn" type="button" id="fStop" hidden>Стоп</button>
+        </div>
+
+        <div class="focus__opts">
+          <label class="check"><input type="checkbox" id="fChime" checked> Тихий звук в конце</label>
+          <button class="toggle" type="button" id="fPresence" aria-pressed="false">Тихое присутствие</button>
+          <button class="toggle" type="button" id="fNums" aria-pressed="false">Скрыть цифры</button>
+          <button class="toggle" type="button" id="fBg" aria-pressed="false">Фоновый шум</button>
+        </div>
+        <div class="range" id="fBgVolWrap" hidden>
+          <label for="fBgVol">Громкость шума</label>
+          <input type="range" id="fBgVol" min="0" max="100" step="5" value="15">
+          <output id="fBgVolOut" for="fBgVol">15%</output>
+        </div>
+        <p class="tool__hint" id="fBgNote" role="status"></p>
+
+        <div class="focus__task">
+          <label class="label" for="fTask">Над чем сейчас <span class="saved">(можно не писать)</span></label>
+          <input class="field" id="fTask" type="text" maxlength="200" autocomplete="off" placeholder="Например: первый абзац отчёта">
+          <p class="saved" id="fSaved" role="status"></p>
+        </div>
+        <p class="rounds" id="fRounds" role="status"></p>
+        <div>
+          <button class="linkish" type="button" id="fErase">Стереть всё</button>
+          <div class="confirm" id="fConfirm" hidden>
+            <p>Стереть настройки, задачу и счёт кругов из этого браузера?</p>
+            <button class="btn btn--sm btn--solid" type="button" data-yes>Да, стереть всё</button>
+            <button class="btn btn--sm" type="button" data-no>Нет, оставить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="how-h">
+    <div class="wrap wrap--text">
+      <h2 id="how-h">Как это устроено</h2>
+      <ul class="points">
+        <li>Нажми «Начать». После отрезка работы прозвучит тихий звук и сам начнётся перерыв. После перерыва таймер подождёт тебя.</li>
+        <li>«Тихое присутствие» — медленная точка по кругу и редкие спокойные фразы. Как будто кто-то работает рядом.</li>
+        <li>Цифры можно спрятать, если они давят. Круг всё равно покажет, сколько прошло.</li>
+        <li>Время считается по часам, поэтому вкладку можно свернуть. Остаток виден в названии вкладки.</li>
+        <li>Звук включается только по кнопке. Настройки, задача и счёт кругов хранятся в этом браузере, кнопка «Стереть всё» убирает их.</li>
+      </ul>
+      <p class="block__text">Если сейчас трудно даже начать, попробуй сначала <a href="../shag/">разбить задачу на три шага</a>. Или <a href="../zvuki/">включи только фон</a> без таймера.</p>
+      <p class="updated">Текст обновлён: 4 ноября 2026</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap wrap--text">
+    <div class="foot__line" aria-hidden="true"><span></span></div>
+    <nav class="foot__nav" aria-label="Инструменты">
+      <a href="../">Главная</a>
+      <a href="../shag/">Сделай шаг</a>
+      <a href="../zvuki/">Звуки</a>
+      <a href="../parkovka/">Парковка мыслей</a>
+      <a href="../sensornaya-komnata/">Сенсорная комната</a>
+      <a href="../kuda-obratitsya/">Куда обратиться</a>
+    </nav>
+    <p class="foot__disclaimer" id="disclaimer"><strong>Тихий мозг — медиа и простые инструменты, а не медицинская услуга.</strong> Материалы не заменяют консультацию врача и медицинскую помощь. Если состояние ухудшается или ты в кризисе, обратись за профессиональной или экстренной помощью: <a href="tel:112">112</a>. Телефон доверия (бесплатно, круглосуточно): <a href="tel:88002000122">8-800-2000-122</a>.</p>
+    <p class="foot__small">Связаться: <a href="mailto:aak0889@yandex.ru">aak0889@yandex.ru</a></p>
+    <p class="foot__small">© 2026 Тихий мозг, тихиймозг.рф</p>
+  </div>
+</footer>
+
+<div class="soundbar" id="soundbar" role="region" aria-label="Звук" hidden><span></span><button type="button">Остановить звук</button></div>
+<script src="../js/base.js" defer></script>
+<script src="../js/sound.js" defer></script>
+<script src="../js/fokus.js" defer></script>
+</body>
+</html>

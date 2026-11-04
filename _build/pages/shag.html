@@ -1,0 +1,61 @@
+<!--{"slug":"shag","title":"Сделай шаг — три маленьких шага к любой задаче · Тихий мозг","ogTitle":"Сделай шаг — три маленьких шага к любой задаче","desc":"Напиши задачу и получи три маленьких первых шага. Их можно поправить и отметить. Без регистрации, текст остаётся только в твоём браузере.","scripts":["shag"]}-->
+  <div class="wrap wrap--text">
+    <header class="page-head">
+      <p class="crumbs"><a href="../">Тихий мозг</a> · инструмент</p>
+      <h1>Сделай шаг</h1>
+      <p class="lead">Большую задачу трудно начать целиком. Напиши её, и здесь появятся три маленьких первых шага.</p>
+    </header>
+  </div>
+
+  <section class="tool" aria-label="Инструмент «Сделай шаг»">
+    <div class="wrap wrap--text">
+      <div class="tool__box">
+        <form id="stepForm" novalidate>
+          <label class="label" for="stepTask">Что нужно сделать?</label>
+          <input class="field" id="stepTask" type="text" maxlength="200" autocomplete="off" placeholder="Например: написать отчёт, разобрать стол, позвонить в поликлинику">
+          <p class="tool__hint" id="stepEmpty" hidden>Напиши хоть пару слов, и шаги появятся.</p>
+          <div class="tool__row"><button class="btn btn--solid" type="submit">Разбить на шаги</button></div>
+        </form>
+
+        <div id="stepOut" hidden>
+          <h2 class="visually-hidden">Шаги</h2>
+          <p class="tool__msg" id="stepTitle" tabindex="-1"></p>
+          <ul class="steplist" id="stepList" aria-label="Маленькие шаги"></ul>
+          <p class="cheer" id="stepCheer" role="status" hidden></p>
+          <div class="tool__row">
+            <button class="btn btn--sm btn--solid" type="button" id="stepMore" hidden>Ещё три шага</button>
+            <button class="btn btn--sm" type="button" id="stepOther">Другие шаги</button>
+            <button class="btn btn--sm" type="button" id="stepAdd">Добавить свой шаг</button>
+            <button class="btn btn--sm" type="button" id="stepFocus">Фокус на первом шаге</button>
+          </div>
+          <div class="tool__row">
+            <button class="linkish" type="button" id="stepNew">Новая задача</button>
+          </div>
+        </div>
+
+        <div class="tool__row">
+          <p class="saved" id="stepSaved" role="status"></p>
+        </div>
+        <div class="tool__row"><button class="linkish" type="button" id="stepErase">Стереть всё</button></div>
+        <div class="confirm" id="stepConfirm" hidden>
+          <p>Стереть задачу и шаги из этого браузера?</p>
+          <button class="btn btn--sm btn--solid" type="button" data-yes>Да, стереть всё</button>
+          <button class="btn btn--sm" type="button" data-no>Нет, оставить</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="how-h">
+    <div class="wrap wrap--text">
+      <h2 id="how-h">Как это устроено</h2>
+      <ul class="points">
+        <li>Шаги подбираются по простым шаблонам прямо в браузере. Никакого искусственного интеллекта и сервера: текст задачи никуда не уходит.</li>
+        <li>Любой шаг можно переписать, убрать или добавить свой. Если шаблон не подошёл, нажми «Другие шаги».</li>
+        <li>Галочки ставь, когда хочется. Три сделанных шага — уже достаточно на сейчас.</li>
+        <li>Задача и шаги хранятся только в этом браузере. Кнопка «Стереть всё» убирает их полностью.</li>
+      </ul>
+      <p class="block__text">Это не лень. Запуск задач — отдельная функция мозга, и у неё свой режим работы. Подробнее в статье <a href="../kak-nachat-zadachu/">«Как начать задачу, когда не можешь начать»</a>.</p>
+      <p class="updated">Текст обновлён: 4 ноября 2026</p>
+    </div>
+  </section>

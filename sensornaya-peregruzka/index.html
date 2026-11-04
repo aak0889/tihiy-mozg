@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Всё раздражает: что делать при сенсорной перегрузке · Тихий мозг</title>
+<meta name="description" content="Шум, свет, одежда, люди — и всё сразу слишком. Что происходит при сенсорной перегрузке у взрослых и что можно сделать за пару минут. Мини-комната тишины прямо на странице.">
+<link rel="canonical" href="https://xn--c1ahcafso1a2a.xn--p1ai/sensornaya-peregruzka/">
+<meta name="theme-color" content="#1D2621">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Тихий мозг">
+<meta property="og:title" content="Всё раздражает: что делать при сенсорной перегрузке">
+<meta property="og:description" content="Шум, свет, одежда, люди — и всё сразу слишком. Что происходит при сенсорной перегрузке у взрослых и что можно сделать за пару минут. Мини-комната тишины прямо на странице.">
+<meta property="og:url" content="https://xn--c1ahcafso1a2a.xn--p1ai/sensornaya-peregruzka/">
+<meta property="og:image" content="https://xn--c1ahcafso1a2a.xn--p1ai/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/tools.css">
+<script>
+  (function () {
+    var d = document.documentElement, t = null, q = null;
+    try { t = localStorage.getItem('tm-theme'); q = localStorage.getItem('tm-quiet'); } catch (e) {}
+    if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+    if (!q) q = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches ? 'on' : 'off';
+    d.setAttribute('data-quiet', q);
+  })();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержанию</a>
+
+<header class="top" id="top">
+  <div class="wrap top__inner">
+    <a class="brand" href="../" aria-label="Тихий мозг, на главную">
+      <svg class="brand__mark" viewBox="0 0 64 32" aria-hidden="true"><path d="M4 22 C8 8 11 4 14 6 S19 28 24 26 S31 15 37 16 S44 18 48 18" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><circle cx="57" cy="18" r="4.2" class="dot"/></svg>
+    </a>
+    <nav class="top__nav" aria-label="Разделы"><a href="../#instrumenty">Инструменты</a></nav>
+    <div class="toggles">
+      <button class="toggle" id="quietBtn" type="button" aria-pressed="false" title="Убрать движение на странице">Без движения</button>
+      <button class="toggle toggle--icon" id="themeBtn" type="button" aria-label="Светлая тема" title="Сменить тему">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap wrap--text">
+    <header class="page-head">
+      <p class="crumbs"><a href="../">Тихий мозг</a> · статья</p>
+      <h1>Всё раздражает: что делать при сенсорной перегрузке</h1>
+      <p class="lead">Гудит холодильник, мигает экран, бирка на свитере царапает шею, кто-то громко говорит по телефону. По отдельности — ерунда. Вместе — хочется исчезнуть. Это не капризы. Похоже, мозг получил больше, чем успевает обработать.</p>
+    </header>
+  </div>
+
+  <section class="tool" aria-label="Мини-версия Сенсорной комнаты">
+    <div class="wrap wrap--text">
+        <div data-sensory>
+          <h2 class="label" style="font-size:1.375rem;margin-bottom:14px">Что сейчас больше всего достаёт?</h2>
+          <div class="modes">
+            <button class="mode" type="button" data-mode="noise" aria-pressed="false"><strong>Шумно вокруг</strong><span>Люди, транспорт, звуки города</span></button>
+            <button class="mode" type="button" data-mode="light" aria-pressed="false"><strong>Раздражает свет и картинка</strong><span>Ярко, мелькает, много визуального</span></button>
+            <button class="mode" type="button" data-mode="body" aria-pressed="false"><strong>Тело не сидит на месте</strong><span>Хочется двигаться, всё чешется и мешает</span></button>
+            <button class="mode" type="button" data-mode="all" aria-pressed="false"><strong>Всё разом</strong><span>Приглушим экран и включим тихий шум</span></button>
+          </div>
+
+          <div class="panel" data-panel="noise" hidden>
+            <h3>Шумно вокруг</h3>
+            <div class="tool__row">
+              <button class="btn btn--sm" type="button" data-snd="brown" aria-pressed="false">Коричневый шум</button>
+              <button class="btn btn--sm" type="button" data-snd="rain" aria-pressed="false">Дождь</button>
+              <button class="btn btn--sm" type="button" data-a="stop">Стоп</button>
+            </div>
+            <div class="range" style="margin-top:10px">
+              <label for="sVolm">Громкость</label>
+              <input type="range" id="sVolm" data-a="vol" min="0" max="100" step="5" value="15">
+              <output data-a="volout" for="sVolm">15%</output>
+            </div>
+            <p class="tool__hint" data-a="note" role="status"></p>
+            <ul class="tips">
+              <li>Если есть наушники, надень их, даже без музыки. Уже станет тише.</li>
+              <li>В транспорте или в очереди можно смотреть в одну точку.</li>
+              <li>Медленно подними и опусти плечи. Пять раз.</li>
+            </ul>
+          </div>
+
+          <div class="panel" data-panel="light" hidden>
+            <h3>Раздражает свет и картинка</h3>
+            <div class="tool__row">
+              <button class="btn btn--sm btn--solid" type="button" data-a="dim" aria-pressed="false">Приглушить экран</button>
+              <button class="btn btn--sm" type="button" data-a="textonly">Только текст</button>
+            </div>
+            <ul class="tips">
+              <li>Если можно, сядь спиной к стене или к окну.</li>
+              <li>Отведи взгляд вдаль на 20 секунд. Можно прикрыть глаза.</li>
+              <li>Убавь яркость телефона и выключи лишние уведомления на полчаса.</li>
+            </ul>
+          </div>
+
+          <div class="panel" data-panel="body" hidden>
+            <h3>Тело не сидит на месте</h3>
+            <div class="move">
+              <p class="move__text" data-a="move" aria-live="polite">Несколько медленных движений по одному. Переходи к следующему, когда захочешь.</p>
+              <p class="move__time" data-a="movetime" role="timer" aria-live="off"></p>
+              <button class="btn btn--solid" type="button" data-a="next">Начать</button>
+            </div>
+          </div>
+
+          <div class="panel" data-panel="all" hidden>
+            <h3>Всё разом</h3>
+            <p style="margin-top:12px">Экран приглушён, тихо играет коричневый шум. Можно просто посидеть. Если хочется, выбери, с чего начать сейчас:</p>
+            <div class="tool__row">
+              <button class="btn btn--sm" type="button" data-goto="noise">Звук</button>
+              <button class="btn btn--sm" type="button" data-goto="light">Свет</button>
+              <button class="btn btn--sm" type="button" data-goto="body">Тело</button>
+              <a class="btn btn--sm" href="../#pauza">60 секунд тишины</a>
+            </div>
+            <div class="tool__row">
+              <button class="btn btn--sm" type="button" data-a="dim" aria-pressed="true">Вернуть яркость</button>
+              <button class="btn btn--sm" type="button" data-a="stop">Выключить звук</button>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </section>
+
+  <article class="article">
+    <div class="wrap wrap--text">
+      <h2>Что происходит</h2>
+      <p><strong>Фильтр не справляется.</strong> Обычно мозг сам отсеивает лишнее: тиканье часов, шум за окном, ощущение одежды на коже. У многих взрослых с СДВГ, у аутичных людей и просто у чувствительных этот фильтр пропускает больше. Сигналов много, и все кажутся важными.</p>
+      <p><strong>Перегрузка копится.</strong> Шумный офис утром, метро, яркий магазин, а вечером последней каплей становится звонок телефона. Реакция кажется несоразмерной, но она отвечает на весь день сразу.</p>
+      <p><strong>Тело включает тревогу.</strong> Когда сигналов слишком много, нервная система может перейти в режим «опасность»: раздражение, злость, желание уйти, слёзы, ступор. Это защитная реакция, а не плохой характер.</p>
+      <p><strong>Усталость и голод делают фильтр тоньше.</strong> Когда не выспался, давно не ел или долго держался «на людях», перегрузка наступает быстрее.</p>
+
+      <h2>Что можно попробовать</h2>
+      <ol class="do">
+        <li><strong>Убери один источник.</strong> Не все сразу, а один, самый громкий: закрой дверь, надень наушники, выключи верхний свет. <em>Займёт 1 минуту.</em></li>
+        <li><strong>Дай ушам ровный фон.</strong> Ровный шум закрывает резкие звуки. Включи коричневый шум или дождь в комнате выше, начни с тихой громкости. <em>Займёт 1 минуту.</em></li>
+        <li><strong>Приглуши картинку.</strong> Убавь яркость экрана, отведи взгляд вдаль или прикрой глаза на 20 секунд. <em>Займёт 1 минуту.</em></li>
+        <li><strong>Дай телу опору.</strong> Сядь спиной к стене, надави ладонями друг на друга, укутайся в плед. Плотное давление многих успокаивает. <em>Займёт 2–3 минуты.</em></li>
+        <li><strong>Уйди, если можно.</strong> Пять минут в тихом месте — в ванной, на лестнице, на улице — не бегство, а забота о себе. <em>Займёт 5 минут.</em></li>
+      </ol>
+      <p>Если перегрузка случается часто, помогает план заранее: наушники в сумке, тёмные очки, одно тихое место на работе, на которое можно рассчитывать.</p>
+
+      <h2>Когда стоит поговорить со специалистом</h2>
+      <ul class="points">
+        <li>Перегрузки случаются почти каждый день и мешают работать, учиться или выходить из дома.</li>
+        <li>После них долго не можешь прийти в себя: часами или днями.</li>
+        <li>Из-за них приходится отказываться от важного: встреч, поездок, работы.</li>
+        <li>Вместе с перегрузками приходят паника, сильная тревога или мысли причинить себе вред.</li>
+      </ul>
+      <p>С этим можно прийти к психиатру, психотерапевту или клиническому психологу. <a href="../kuda-obratitsya/">Ориентиры здесь</a>.</p>
+
+      <div class="callout">
+        <p><strong>Это не медицинская услуга.</strong> Статья помогает понять, что происходит, но не ставит диагноз и не заменяет консультацию специалиста.</p>
+      </div>
+
+      <h2>Один следующий шаг</h2>
+      <p>Если прямо сейчас слишком много всего, нажми «Всё разом» в комнате выше. Больше ничего делать не нужно.</p>
+      <h2>Ещё может пригодиться</h2>
+      <div class="tcards">
+        <a class="tcard" href="../parkovka/"><h3>Парковка мыслей</h3><p>Выгрузить всё, что крутится в голове, за минуту.</p></a>
+        <a class="tcard" href="../#pauza"><h3>Пауза 60 секунд</h3><p>Спокойный круг. Можно ничего не решать.</p></a>
+        <a class="tcard" href="../sensornaya-komnata/"><h3>Сенсорная комната</h3><p>Когда шумно, ярко или тело не сидит на месте.</p></a>
+        <a class="tcard tcard--soft" href="../kuda-obratitsya/"><h3>Куда обратиться</h3><p>Психиатр, психотерапия, коучинг: ориентиры без рекламы.</p></a>
+      </div>
+
+      <p class="updated">Текст обновлён: 4 ноября 2026</p>
+    </div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="wrap wrap--text">
+    <div class="foot__line" aria-hidden="true"><span></span></div>
+    <nav class="foot__nav" aria-label="Инструменты">
+      <a href="../">Главная</a>
+      <a href="../shag/">Сделай шаг</a>
+      <a href="../fokus/">Фокус</a>
+      <a href="../zvuki/">Звуки</a>
+      <a href="../parkovka/">Парковка мыслей</a>
+      <a href="../sensornaya-komnata/">Сенсорная комната</a>
+      <a href="../kuda-obratitsya/">Куда обратиться</a>
+    </nav>
+    <p class="foot__disclaimer" id="disclaimer"><strong>Тихий мозг — медиа и простые инструменты, а не медицинская услуга.</strong> Материалы не заменяют консультацию врача и медицинскую помощь. Если состояние ухудшается или ты в кризисе, обратись за профессиональной или экстренной помощью: <a href="tel:112">112</a>. Телефон доверия (бесплатно, круглосуточно): <a href="tel:88002000122">8-800-2000-122</a>.</p>
+    <p class="foot__small">Связаться: <a href="mailto:aak0889@yandex.ru">aak0889@yandex.ru</a></p>
+    <p class="foot__small">© 2026 Тихий мозг, тихиймозг.рф</p>
+  </div>
+</footer>
+
+<div class="dimmer" id="dimmer" aria-hidden="true" hidden></div>
+<div class="textonly" id="textonly" role="dialog" aria-modal="true" aria-label="Только текст" hidden><p></p><button type="button">Назад</button></div>
+<div class="soundbar" id="soundbar" role="region" aria-label="Звук" hidden><span></span><button type="button">Остановить звук</button></div>
+<script src="../js/base.js" defer></script>
+<script src="../js/sound.js" defer></script>
+<script src="../js/sensornaya.js" defer></script>
+</body>
+</html>

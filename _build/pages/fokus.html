@@ -1,0 +1,81 @@
+<!--{"slug":"fokus","title":"Фокус — спокойный таймер 25/5 без тревожных цифр · Тихий мозг","ogTitle":"Фокус — спокойный таймер для работы и перерывов","desc":"Таймер 15/3, 25/5 или 50/10 с паузой и пропуском. Тихий звук в конце, спокойная анимация «тихого присутствия», фоновый шум по желанию. Без регистрации.","scripts":["sound","fokus"],"soundbar":true}-->
+  <div class="wrap wrap--text">
+    <header class="page-head">
+      <p class="crumbs"><a href="../">Тихий мозг</a> · инструмент</p>
+      <h1>Фокус</h1>
+      <p class="lead">Отрезок работы, потом перерыв. Без красных цифр и спешки. Если отвлёкся, просто вернись.</p>
+    </header>
+  </div>
+
+  <section class="tool" aria-label="Таймер фокуса">
+    <div class="wrap wrap--text">
+      <div class="tool__box focus">
+        <div class="seg" id="fPreset" role="group" aria-label="Длительность: работа и перерыв в минутах">
+          <button type="button" data-p="15" aria-pressed="false">15 / 3</button>
+          <button type="button" data-p="25" aria-pressed="true">25 / 5</button>
+          <button type="button" data-p="50" aria-pressed="false">50 / 10</button>
+        </div>
+        <p class="tool__hint" id="fBusy" role="status"></p>
+
+        <div class="ring" id="ring">
+          <span class="presence" aria-hidden="true"></span>
+          <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="track" cx="50" cy="50" r="47"/><circle class="arc" id="arc" cx="50" cy="50" r="47"/></svg>
+          <span class="ring__orbit" aria-hidden="true"></span>
+          <div class="ring__in">
+            <span class="ring__time" id="fTime" role="timer" aria-live="off">25:00</span>
+            <span class="ring__phase" id="fPhase">Готово к старту</span>
+          </div>
+        </div>
+        <p class="presence-line" id="fLine" aria-live="polite"></p>
+
+        <div class="focus__ctrl">
+          <button class="btn btn--solid" type="button" id="fStart">Начать</button>
+          <button class="btn" type="button" id="fSkip" hidden>Пропустить</button>
+          <button class="btn" type="button" id="fStop" hidden>Стоп</button>
+        </div>
+
+        <div class="focus__opts">
+          <label class="check"><input type="checkbox" id="fChime" checked> Тихий звук в конце</label>
+          <button class="toggle" type="button" id="fPresence" aria-pressed="false">Тихое присутствие</button>
+          <button class="toggle" type="button" id="fNums" aria-pressed="false">Скрыть цифры</button>
+          <button class="toggle" type="button" id="fBg" aria-pressed="false">Фоновый шум</button>
+        </div>
+        <div class="range" id="fBgVolWrap" hidden>
+          <label for="fBgVol">Громкость шума</label>
+          <input type="range" id="fBgVol" min="0" max="100" step="5" value="15">
+          <output id="fBgVolOut" for="fBgVol">15%</output>
+        </div>
+        <p class="tool__hint" id="fBgNote" role="status"></p>
+
+        <div class="focus__task">
+          <label class="label" for="fTask">Над чем сейчас <span class="saved">(можно не писать)</span></label>
+          <input class="field" id="fTask" type="text" maxlength="200" autocomplete="off" placeholder="Например: первый абзац отчёта">
+          <p class="saved" id="fSaved" role="status"></p>
+        </div>
+        <p class="rounds" id="fRounds" role="status"></p>
+        <div>
+          <button class="linkish" type="button" id="fErase">Стереть всё</button>
+          <div class="confirm" id="fConfirm" hidden>
+            <p>Стереть настройки, задачу и счёт кругов из этого браузера?</p>
+            <button class="btn btn--sm btn--solid" type="button" data-yes>Да, стереть всё</button>
+            <button class="btn btn--sm" type="button" data-no>Нет, оставить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="how-h">
+    <div class="wrap wrap--text">
+      <h2 id="how-h">Как это устроено</h2>
+      <ul class="points">
+        <li>Нажми «Начать». После отрезка работы прозвучит тихий звук и сам начнётся перерыв. После перерыва таймер подождёт тебя.</li>
+        <li>«Тихое присутствие» — медленная точка по кругу и редкие спокойные фразы. Как будто кто-то работает рядом.</li>
+        <li>Цифры можно спрятать, если они давят. Круг всё равно покажет, сколько прошло.</li>
+        <li>Время считается по часам, поэтому вкладку можно свернуть. Остаток виден в названии вкладки.</li>
+        <li>Звук включается только по кнопке. Настройки, задача и счёт кругов хранятся в этом браузере, кнопка «Стереть всё» убирает их.</li>
+      </ul>
+      <p class="block__text">Если сейчас трудно даже начать, попробуй сначала <a href="../shag/">разбить задачу на три шага</a>. Или <a href="../zvuki/">включи только фон</a> без таймера.</p>
+      <p class="updated">Текст обновлён: 4 ноября 2026</p>
+    </div>
+  </section>

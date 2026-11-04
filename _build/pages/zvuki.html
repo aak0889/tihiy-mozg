@@ -1,0 +1,77 @@
+<!--{"slug":"zvuki","title":"Коричневый шум, розовый шум, дождь и лес онлайн · Тихий мозг","ogTitle":"Звуки: коричневый и розовый шум, дождь, лес","desc":"Коричневый и розовый шум, дождь и лес прямо в браузере. Своя громкость у каждого звука, таймер выключения и понятная кнопка остановки. Без регистрации и рекламы.","scripts":["sound","zvuki"],"soundbar":true}-->
+  <div class="wrap wrap--text">
+    <header class="page-head">
+      <p class="crumbs"><a href="../">Тихий мозг</a> · инструмент</p>
+      <h1>Звуки</h1>
+      <p class="lead">Ровный фон, который закрывает мелкие шумы вокруг. Звуки можно смешивать. Начинай с тихой громкости.</p>
+    </header>
+  </div>
+
+  <section class="tool" aria-label="Фоновые звуки">
+    <div class="wrap wrap--mid">
+      <div class="sounds">
+        <article class="snd" data-sound="brown">
+          <h3>Коричневый шум</h3>
+          <p>Низкий и мягкий, похож на далёкий водопад или гул самолёта.</p>
+          <button class="btn btn--sm btn--solid" type="button" aria-pressed="false">Включить</button>
+          <div class="range"><label class="visually-hidden" for="v-brown">Громкость: коричневый шум</label><input type="range" id="v-brown" min="0" max="100" step="5" value="15"><output for="v-brown">15%</output></div>
+        </article>
+        <article class="snd" data-sound="pink">
+          <h3>Розовый шум</h3>
+          <p>Светлее коричневого, ровный, как шум в ракушке или лёгкий ветер.</p>
+          <button class="btn btn--sm btn--solid" type="button" aria-pressed="false">Включить</button>
+          <div class="range"><label class="visually-hidden" for="v-pink">Громкость: розовый шум</label><input type="range" id="v-pink" min="0" max="100" step="5" value="15"><output for="v-pink">15%</output></div>
+        </article>
+        <article class="snd" data-sound="rain">
+          <h3>Дождь</h3>
+          <p>Ровный дождь за окном с редкими каплями.</p>
+          <button class="btn btn--sm btn--solid" type="button" aria-pressed="false">Включить</button>
+          <div class="range"><label class="visually-hidden" for="v-rain">Громкость: дождь</label><input type="range" id="v-rain" min="0" max="100" step="5" value="15"><output for="v-rain">15%</output></div>
+        </article>
+        <article class="snd" data-sound="forest">
+          <h3>Лес</h3>
+          <p>Ветер в листве и далёкие птицы, изредка.</p>
+          <button class="btn btn--sm btn--solid" type="button" aria-pressed="false">Включить</button>
+          <div class="range"><label class="visually-hidden" for="v-forest">Громкость: лес</label><input type="range" id="v-forest" min="0" max="100" step="5" value="15"><output for="v-forest">15%</output></div>
+        </article>
+      </div>
+
+      <div class="tool__box" style="margin-top:14px">
+        <div class="tool__row">
+          <span class="label" id="sleep-l" style="margin:0">Выключить через</span>
+          <div class="seg" id="sleepSeg" role="group" aria-labelledby="sleep-l">
+            <button type="button" data-min="0" aria-pressed="true">Не выключать</button>
+            <button type="button" data-min="15" aria-pressed="false">15 мин</button>
+            <button type="button" data-min="30" aria-pressed="false">30 мин</button>
+            <button type="button" data-min="60" aria-pressed="false">60 мин</button>
+          </div>
+        </div>
+        <p class="tool__hint" id="sleepLeft" role="status"></p>
+        <div class="tool__row">
+          <button class="btn" type="button" id="stopAll" disabled>Остановить всё</button>
+          <button class="linkish" type="button" id="sndErase">Стереть настройки</button>
+        </div>
+        <div class="confirm" id="sndConfirm" hidden>
+          <p>Стереть сохранённую громкость из этого браузера?</p>
+          <button class="btn btn--sm btn--solid" type="button" data-yes>Да, стереть</button>
+          <button class="btn btn--sm" type="button" data-no>Нет, оставить</button>
+        </div>
+        <p class="tool__msg" id="sndNote" role="status"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="how-h">
+    <div class="wrap wrap--text">
+      <h2 id="how-h">Как это устроено</h2>
+      <ul class="points">
+        <li>Звуки не записаны заранее: браузер создаёт их сам, прямо сейчас. Поэтому они не повторяются кусками и работают без интернета, если страница уже открыта.</li>
+        <li>Звук включается только по кнопке и нарастает плавно. Громкость по умолчанию 15%. В наушниках начни ещё тише.</li>
+        <li>Таймер выключения плавно убавляет звук за последние 30 секунд. Удобно, чтобы уснуть.</li>
+        <li>Пока что-то играет, внизу экрана видна кнопка «Остановить звук».</li>
+        <li>В браузере хранится только громкость каждого звука.</li>
+      </ul>
+      <p class="block__text">Если вокруг слишком много всего сразу, загляни в <a href="../sensornaya-komnata/">Сенсорную комнату</a>. Для работы отрезками есть <a href="../fokus/">Фокус</a>.</p>
+      <p class="updated">Текст обновлён: 4 ноября 2026</p>
+    </div>
+  </section>

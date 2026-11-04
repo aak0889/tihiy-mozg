@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сделай шаг — три маленьких шага к любой задаче · Тихий мозг</title>
+<meta name="description" content="Напиши задачу и получи три маленьких первых шага. Их можно поправить и отметить. Без регистрации, текст остаётся только в твоём браузере.">
+<link rel="canonical" href="https://xn--c1ahcafso1a2a.xn--p1ai/shag/">
+<meta name="theme-color" content="#1D2621">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Тихий мозг">
+<meta property="og:title" content="Сделай шаг — три маленьких шага к любой задаче">
+<meta property="og:description" content="Напиши задачу и получи три маленьких первых шага. Их можно поправить и отметить. Без регистрации, текст остаётся только в твоём браузере.">
+<meta property="og:url" content="https://xn--c1ahcafso1a2a.xn--p1ai/shag/">
+<meta property="og:image" content="https://xn--c1ahcafso1a2a.xn--p1ai/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/tools.css">
+<script>
+  (function () {
+    var d = document.documentElement, t = null, q = null;
+    try { t = localStorage.getItem('tm-theme'); q = localStorage.getItem('tm-quiet'); } catch (e) {}
+    if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+    if (!q) q = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches ? 'on' : 'off';
+    d.setAttribute('data-quiet', q);
+  })();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержанию</a>
+
+<header class="top" id="top">
+  <div class="wrap top__inner">
+    <a class="brand" href="../" aria-label="Тихий мозг, на главную">
+      <svg class="brand__mark" viewBox="0 0 64 32" aria-hidden="true"><path d="M4 22 C8 8 11 4 14 6 S19 28 24 26 S31 15 37 16 S44 18 48 18" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><circle cx="57" cy="18" r="4.2" class="dot"/></svg>
+    </a>
+    <nav class="top__nav" aria-label="Разделы"><a href="../#instrumenty">Инструменты</a></nav>
+    <div class="toggles">
+      <button class="toggle" id="quietBtn" type="button" aria-pressed="false" title="Убрать движение на странице">Без движения</button>
+      <button class="toggle toggle--icon" id="themeBtn" type="button" aria-label="Светлая тема" title="Сменить тему">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap wrap--text">
+    <header class="page-head">
+      <p class="crumbs"><a href="../">Тихий мозг</a> · инструмент</p>
+      <h1>Сделай шаг</h1>
+      <p class="lead">Большую задачу трудно начать целиком. Напиши её, и здесь появятся три маленьких первых шага.</p>
+    </header>
+  </div>
+
+  <section class="tool" aria-label="Инструмент «Сделай шаг»">
+    <div class="wrap wrap--text">
+      <div class="tool__box">
+        <form id="stepForm" novalidate>
+          <label class="label" for="stepTask">Что нужно сделать?</label>
+          <input class="field" id="stepTask" type="text" maxlength="200" autocomplete="off" placeholder="Например: написать отчёт, разобрать стол, позвонить в поликлинику">
+          <p class="tool__hint" id="stepEmpty" hidden>Напиши хоть пару слов, и шаги появятся.</p>
+          <div class="tool__row"><button class="btn btn--solid" type="submit">Разбить на шаги</button></div>
+        </form>
+
+        <div id="stepOut" hidden>
+          <h2 class="visually-hidden">Шаги</h2>
+          <p class="tool__msg" id="stepTitle" tabindex="-1"></p>
+          <ul class="steplist" id="stepList" aria-label="Маленькие шаги"></ul>
+          <p class="cheer" id="stepCheer" role="status" hidden></p>
+          <div class="tool__row">
+            <button class="btn btn--sm btn--solid" type="button" id="stepMore" hidden>Ещё три шага</button>
+            <button class="btn btn--sm" type="button" id="stepOther">Другие шаги</button>
+            <button class="btn btn--sm" type="button" id="stepAdd">Добавить свой шаг</button>
+            <button class="btn btn--sm" type="button" id="stepFocus">Фокус на первом шаге</button>
+          </div>
+          <div class="tool__row">
+            <button class="linkish" type="button" id="stepNew">Новая задача</button>
+          </div>
+        </div>
+
+        <div class="tool__row">
+          <p class="saved" id="stepSaved" role="status"></p>
+        </div>
+        <div class="tool__row"><button class="linkish" type="button" id="stepErase">Стереть всё</button></div>
+        <div class="confirm" id="stepConfirm" hidden>
+          <p>Стереть задачу и шаги из этого браузера?</p>
+          <button class="btn btn--sm btn--solid" type="button" data-yes>Да, стереть всё</button>
+          <button class="btn btn--sm" type="button" data-no>Нет, оставить</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="how-h">
+    <div class="wrap wrap--text">
+      <h2 id="how-h">Как это устроено</h2>
+      <ul class="points">
+        <li>Шаги подбираются по простым шаблонам прямо в браузере. Никакого искусственного интеллекта и сервера: текст задачи никуда не уходит.</li>
+        <li>Любой шаг можно переписать, убрать или добавить свой. Если шаблон не подошёл, нажми «Другие шаги».</li>
+        <li>Галочки ставь, когда хочется. Три сделанных шага — уже достаточно на сейчас.</li>
+        <li>Задача и шаги хранятся только в этом браузере. Кнопка «Стереть всё» убирает их полностью.</li>
+      </ul>
+      <p class="block__text">Это не лень. Запуск задач — отдельная функция мозга, и у неё свой режим работы. Подробнее в статье <a href="../kak-nachat-zadachu/">«Как начать задачу, когда не можешь начать»</a>.</p>
+      <p class="updated">Текст обновлён: 4 ноября 2026</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap wrap--text">
+    <div class="foot__line" aria-hidden="true"><span></span></div>
+    <nav class="foot__nav" aria-label="Инструменты">
+      <a href="../">Главная</a>
+      <a href="../fokus/">Фокус</a>
+      <a href="../zvuki/">Звуки</a>
+      <a href="../parkovka/">Парковка мыслей</a>
+      <a href="../sensornaya-komnata/">Сенсорная комната</a>
+      <a href="../kuda-obratitsya/">Куда обратиться</a>
+    </nav>
+    <p class="foot__disclaimer" id="disclaimer"><strong>Тихий мозг — медиа и простые инструменты, а не медицинская услуга.</strong> Материалы не заменяют консультацию врача и медицинскую помощь. Если состояние ухудшается или ты в кризисе, обратись за профессиональной или экстренной помощью: <a href="tel:112">112</a>. Телефон доверия (бесплатно, круглосуточно): <a href="tel:88002000122">8-800-2000-122</a>.</p>
+    <p class="foot__small">Связаться: <a href="mailto:aak0889@yandex.ru">aak0889@yandex.ru</a></p>
+    <p class="foot__small">© 2026 Тихий мозг, тихиймозг.рф</p>
+  </div>
+</footer>
+
+<script src="../js/base.js" defer></script>
+<script src="../js/shag.js" defer></script>
+</body>
+</html>

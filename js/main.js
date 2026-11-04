@@ -134,6 +134,7 @@
   function close() {
     stopTick(); state = 'idle'; breathe(false); circle.classList.remove('is-still'); soundStop(); soundHint.textContent = HINT;
     dlg.hidden = true; setInert(false); startBtn.focus();
+    if (location.hash === '#pauza') try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
   }
   function togglePause() {
     if (state === 'running') {
@@ -162,6 +163,10 @@
   }
 
   startBtn.addEventListener('click', open);
+  /* ссылка «../#pauza» с других страниц сразу открывает паузу (звук всё равно выключен) */
+  function fromHash() { if (location.hash === '#pauza' && dlg.hidden) open(); }
+  fromHash();
+  window.addEventListener('hashchange', fromHash);
   pauseBtn.addEventListener('click', togglePause);
   $('resetSkip').addEventListener('click', finish);
   $('resetStop').addEventListener('click', close);

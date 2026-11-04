@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мысли не дают уснуть: как выгрузить голову на ночь · Тихий мозг</title>
+<meta name="description" content="Лёг, а голова только разгоняется? Почему вечером мысли крутятся сильнее и как выгрузить их за пару минут. Ночная парковка мыслей прямо на странице, без регистрации.">
+<link rel="canonical" href="https://xn--c1ahcafso1a2a.xn--p1ai/mysli-ne-dayut-usnut/">
+<meta name="theme-color" content="#1D2621">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Тихий мозг">
+<meta property="og:title" content="Мысли не дают уснуть: как выгрузить голову на ночь">
+<meta property="og:description" content="Лёг, а голова только разгоняется? Почему вечером мысли крутятся сильнее и как выгрузить их за пару минут. Ночная парковка мыслей прямо на странице, без регистрации.">
+<meta property="og:url" content="https://xn--c1ahcafso1a2a.xn--p1ai/mysli-ne-dayut-usnut/">
+<meta property="og:image" content="https://xn--c1ahcafso1a2a.xn--p1ai/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/tools.css">
+<script>
+  (function () {
+    var d = document.documentElement, t = null, q = null;
+    try { t = localStorage.getItem('tm-theme'); q = localStorage.getItem('tm-quiet'); } catch (e) {}
+    if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+    if (!q) q = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches ? 'on' : 'off';
+    d.setAttribute('data-quiet', q);
+  })();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержанию</a>
+
+<header class="top" id="top">
+  <div class="wrap top__inner">
+    <a class="brand" href="../" aria-label="Тихий мозг, на главную">
+      <svg class="brand__mark" viewBox="0 0 64 32" aria-hidden="true"><path d="M4 22 C8 8 11 4 14 6 S19 28 24 26 S31 15 37 16 S44 18 48 18" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><circle cx="57" cy="18" r="4.2" class="dot"/></svg>
+    </a>
+    <nav class="top__nav" aria-label="Разделы"><a href="../#instrumenty">Инструменты</a></nav>
+    <div class="toggles">
+      <button class="toggle" id="quietBtn" type="button" aria-pressed="false" title="Убрать движение на странице">Без движения</button>
+      <button class="toggle toggle--icon" id="themeBtn" type="button" aria-label="Светлая тема" title="Сменить тему">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap wrap--text">
+    <header class="page-head">
+      <p class="crumbs"><a href="../">Тихий мозг</a> · статья</p>
+      <h1>Мысли не дают уснуть: как выгрузить голову на ночь</h1>
+      <p class="lead">Свет выключен, тело устало, а голова только разгоняется: письмо, которое не отправил, разговор трёхлетней давности, идея для проекта, «а выключил ли я плиту». Давай выгрузим это отсюда, а потом разберёмся, почему так.</p>
+    </header>
+  </div>
+
+  <section class="tool park--night" aria-label="Ночная парковка мыслей">
+    <div class="wrap wrap--text">
+      <div class="tool__box">
+        <div data-park data-night>
+          <label class="label" for="parkTextNight">Всё, что крутится перед сном</label>
+          <textarea class="field" id="parkTextNight" data-p="text" rows="6"></textarea>
+          <p class="saved" data-p="saved" role="status"></p>
+          <div class="tool__row">
+            <button class="btn btn--solid" type="button" data-p="park">Поставить на парковку</button>
+            <button class="btn" type="button" data-p="sleep">Готово, можно спать</button>
+          </div>
+          <p class="tool__msg" data-p="msg" role="status" aria-live="polite"></p>
+          <p class="sleep-done" data-p="sleepDone" tabindex="-1" hidden>Всё записано и лежит здесь. Утром можно вернуться к списку. Спокойной ночи.</p>
+          <p class="tool__hint" data-p="count"></p>
+          <ul class="park__list" data-p="list" aria-label="Мысли на парковке"></ul>
+          <div class="tool__row" data-p="actions" hidden>
+            <button class="btn btn--sm" type="button" data-p="keep">Оставить здесь</button>
+            <button class="btn btn--sm" type="button" data-p="sortBtn" aria-pressed="false">Разобрать (по желанию)</button>
+            <button class="btn btn--sm" type="button" data-p="export">Выгрузить и стереть</button>
+          </div>
+          <div class="confirm" data-p="exportConfirm" hidden>
+            <p>Копирую…</p>
+            <a class="btn btn--sm" data-p="download" href="#" download>Скачать .txt</a>
+            <button class="btn btn--sm btn--solid" type="button" data-yes>Да, стереть всё</button>
+            <button class="btn btn--sm" type="button" data-no>Нет, оставить</button>
+          </div>
+          <div class="cols" data-p="cols" hidden>
+            <div class="col"><h3>Сделать</h3><ul data-col="do"></ul></div>
+            <div class="col"><h3>Подумать</h3><ul data-col="think"></ul></div>
+            <div class="col"><h3>Отпустить</h3><ul data-col="go"></ul></div>
+          </div>
+          <div class="tool__row">
+            <button class="linkish" type="button" data-p="erase">Всё стереть</button>
+            <a class="linkish" href="#chto-proishodit">Куда мне с этим дальше</a>
+          </div>
+          <div class="confirm" data-p="confirm" hidden>
+            <p>Стереть все мысли и черновик из этого браузера?</p>
+            <button class="btn btn--sm btn--solid" type="button" data-yes>Да, стереть всё</button>
+            <button class="btn btn--sm" type="button" data-no>Нет, оставить</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <article class="article" id="chto-proishodit">
+    <div class="wrap wrap--text">
+      <h2>Что происходит</h2>
+      <p><strong>Днём мысли заглушены делами.</strong> Когда вокруг тихо и делать больше нечего, всё отложенное поднимается наверх. Мозг пытается удержать незаконченное, чтобы не забыть.</p>
+      <p><strong>Незаконченное держит крепче.</strong> Психологи давно заметили: прерванные дела помнятся лучше законченных. Каждая «висящая» задача немного тянет внимание на себя. Если записать её и решить, когда к ней вернёшься, голове становится легче отпустить.</p>
+      <p><strong>Вечером особенно трудно переключиться.</strong> Многим людям с СДВГ сложно остановить поток мыслей, а часы сна у них часто сдвинуты позже. Вечер — то время, когда голова наконец просыпается.</p>
+      <p><strong>Тревога любит темноту.</strong> Ночью мысли кажутся больше и страшнее, чем днём. Это особенность уставшего мозга, а не правда о твоей жизни.</p>
+
+      <h2>Что можно попробовать</h2>
+      <ol class="do">
+        <li><strong>Выгрузи всё.</strong> Напиши в поле выше всё, что крутится, без порядка и без оценок. Каждая строка — одна мысль. Разбирать ночью не нужно. <em>Займёт 2–3 минуты.</em></li>
+        <li><strong>Назначь время для тревоги.</strong> Скажи себе: «Подумаю об этом завтра в 11:00». Звучит странно, но мозгу легче отпустить мысль, когда у неё есть своё время. <em>Займёт 1 минуту.</em></li>
+        <li><strong>Убери экран подальше.</strong> Если можно, положи телефон так, чтобы до него нужно было встать. Яркий экран и бесконечная лента разгоняют голову. <em>Займёт 1 минуту.</em></li>
+        <li><strong>Дай голове скучное дело.</strong> Ровный шум, медленный счёт выдохов или перечисление предметов в комнате по алфавиту. Скучное помогает мозгу затихнуть. Ровный фон можно включить в <a href="../zvuki/">«Звуках»</a> с таймером выключения. <em>Займёт 5–10 минут.</em></li>
+        <li><strong>Не получается уснуть — встань.</strong> Если прошло минут двадцать, а сна нет, можно ненадолго выйти в другую комнату с приглушённым светом и вернуться, когда захочется спать. <em>Займёт 10–15 минут.</em></li>
+      </ol>
+
+      <h2>Когда стоит поговорить со специалистом</h2>
+      <ul class="points">
+        <li>Трудно уснуть три и больше ночей в неделю, и так уже месяц или дольше.</li>
+        <li>Днём из-за недосыпа трудно работать, водить машину, общаться.</li>
+        <li>Ночные мысли почти всегда тревожные или мрачные.</li>
+        <li>Без алкоголя или снотворного, которое никто не назначал, уснуть не получается.</li>
+      </ul>
+      <p>С проблемами сна можно прийти к терапевту, психиатру или сомнологу. <a href="../kuda-obratitsya/">Ориентиры здесь</a>.</p>
+
+      <div class="callout">
+        <p><strong>Это не медицинская услуга.</strong> Статья помогает понять, что происходит, но не ставит диагноз и не заменяет консультацию специалиста.</p>
+      </div>
+
+      <h2>Один следующий шаг</h2>
+      <p>Выгрузи мысли в поле выше и нажми «Готово, можно спать». Утром они будут ждать здесь же.</p>
+      <h2>Ещё может пригодиться</h2>
+      <div class="tcards">
+        <a class="tcard" href="../parkovka/"><h3>Парковка мыслей</h3><p>Выгрузить всё, что крутится в голове, за минуту.</p></a>
+        <a class="tcard" href="../#pauza"><h3>Пауза 60 секунд</h3><p>Спокойный круг. Можно ничего не решать.</p></a>
+        <a class="tcard" href="../sensornaya-komnata/"><h3>Сенсорная комната</h3><p>Когда шумно, ярко или тело не сидит на месте.</p></a>
+        <a class="tcard tcard--soft" href="../kuda-obratitsya/"><h3>Куда обратиться</h3><p>Психиатр, психотерапия, коучинг: ориентиры без рекламы.</p></a>
+      </div>
+
+      <p class="updated">Текст обновлён: 4 ноября 2026</p>
+    </div>
+  </article>
+</main>
+
+<footer class="foot">
+  <div class="wrap wrap--text">
+    <div class="foot__line" aria-hidden="true"><span></span></div>
+    <nav class="foot__nav" aria-label="Инструменты">
+      <a href="../">Главная</a>
+      <a href="../shag/">Сделай шаг</a>
+      <a href="../fokus/">Фокус</a>
+      <a href="../zvuki/">Звуки</a>
+      <a href="../parkovka/">Парковка мыслей</a>
+      <a href="../sensornaya-komnata/">Сенсорная комната</a>
+      <a href="../kuda-obratitsya/">Куда обратиться</a>
+    </nav>
+    <p class="foot__disclaimer" id="disclaimer"><strong>Тихий мозг — медиа и простые инструменты, а не медицинская услуга.</strong> Материалы не заменяют консультацию врача и медицинскую помощь. Если состояние ухудшается или ты в кризисе, обратись за профессиональной или экстренной помощью: <a href="tel:112">112</a>. Телефон доверия (бесплатно, круглосуточно): <a href="tel:88002000122">8-800-2000-122</a>.</p>
+    <p class="foot__small">Связаться: <a href="mailto:aak0889@yandex.ru">aak0889@yandex.ru</a></p>
+    <p class="foot__small">© 2026 Тихий мозг, тихиймозг.рф</p>
+  </div>
+</footer>
+
+<script src="../js/base.js" defer></script>
+<script src="../js/parkovka.js" defer></script>
+</body>
+</html>
