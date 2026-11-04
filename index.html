@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ТЕКСТ: заголовок вкладки и описание для поиска (до ~160 знаков) -->
+<title>Тихий мозг — 60 секунд спокойной паузы</title>
+<meta name="description" content="Сброс: 60 секунд спокойной паузы без регистрации. Звук выключен, остановить можно в любой момент. Простые инструменты для взрослых с СДВГ.">
+<link rel="canonical" href="https://xn--c1ahcafso1a2a.xn--p1ai/">
+<meta name="theme-color" content="#1D2621">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Тихий мозг">
+<meta property="og:title" content="Тихий мозг — можно ничего не решать прямо сейчас">
+<meta property="og:description" content="60 секунд спокойной паузы. Без регистрации, звук выключен, остановить можно в любой момент.">
+<meta property="og:url" content="https://xn--c1ahcafso1a2a.xn--p1ai/">
+<meta property="og:image" content="https://xn--c1ahcafso1a2a.xn--p1ai/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Тихий мозг: волна, которая успокаивается в прямую линию">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  /* тема и режим «без движения» до отрисовки. Тёмная тема по умолчанию */
+  (function () {
+    var d = document.documentElement, t = null, q = null;
+    try { t = localStorage.getItem('tm-theme'); q = localStorage.getItem('tm-quiet'); } catch (e) {}
+    if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+    if (!q) q = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches ? 'on' : 'off';
+    d.setAttribute('data-quiet', q);
+  })();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержанию</a>
+
+<header class="top" id="top">
+  <div class="wrap top__inner">
+    <a class="brand" href="#main" aria-label="Тихий мозг, к началу">
+      <svg class="brand__mark" viewBox="0 0 64 32" aria-hidden="true"><path d="M4 22 C8 8 11 4 14 6 S19 28 24 26 S31 15 37 16 S44 18 48 18" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><circle cx="57" cy="18" r="4.2" class="dot"/></svg>
+    </a>
+    <div class="toggles">
+      <button class="toggle" id="quietBtn" type="button" aria-pressed="false" title="Убрать движение на странице и в паузе">Без движения</button>
+      <button class="toggle toggle--icon" id="themeBtn" type="button" aria-label="Светлая тема" title="Сменить тему">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== ГЛАВНЫЙ ЭКРАН: СБРОС ===================== -->
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap hero__inner">
+      <p class="hero__brand">
+        <img class="wm wm--on-dark" src="img/wordmark-light.png" width="1019" height="147" alt="Тихий мозг">
+        <img class="wm wm--on-light" src="img/wordmark-dark.png" width="1019" height="147" alt="Тихий мозг">
+      </p>
+      <div class="hero__wave" aria-hidden="true">
+        <svg id="heroWave" viewBox="0 0 1000 90" preserveAspectRatio="none"><path d="M0 45 L1000 45"/></svg>
+        <span class="hero__dot"></span>
+      </div>
+      <!-- ТЕКСТ: главная фраза (из брифа) -->
+      <h1 id="hero-h" class="hero__title">Можно ничего не решать прямо сейчас</h1>
+      <!-- ТЕКСТ: пояснение под фразой -->
+      <p class="hero__lead">60 секунд спокойной паузы. Звук выключен, остановить можно в любой момент.</p>
+      <button type="button" class="btn btn--solid btn--xl" id="resetStart">Начать 60 секунд</button>
+      <!-- ТЕКСТ: строка под кнопкой -->
+      <p class="hero__note">Без регистрации. Ничего не нужно вводить.</p>
+      <!-- ТЕКСТ: короткая пометка-дисклеймер у кнопки -->
+      <p class="hero__note"><a href="#disclaimer">Это не медицинская услуга</a></p>
+    </div>
+  </section>
+
+  <!-- ===================== КАК УСТРОЕНА ПАУЗА ===================== -->
+  <section class="block" id="kak" aria-labelledby="kak-h">
+    <div class="wrap wrap--text">
+      <!-- ТЕКСТ: заголовок и пункты -->
+      <h2 id="kak-h">Как устроена пауза</h2>
+      <ul class="points">
+        <li>Круг медленно расширяется и сужается. Можно просто смотреть на него, дыхание менять не нужно.</li>
+        <li>Звук выключен. Мягкий фон включается отдельной кнопкой, громкость от 0 до 100%.</li>
+        <li>«Пауза», «Пропустить» и «Остановить» доступны всё время. Если станет некомфортно, просто остановись.</li>
+        <li>В конце можно остаться, повторить или выбрать один маленький шаг.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== О ПРОЕКТЕ ===================== -->
+  <section class="block" id="o-proekte" aria-labelledby="about-h">
+    <div class="wrap wrap--text">
+      <h2 id="about-h" class="visually-hidden">О проекте</h2>
+      <!-- ТЕКСТ: главная мысль проекта (из брифа) -->
+      <blockquote class="quote">
+        <p>Мы не чиним тебя. Мы строим среду, в которой твоему мозгу легче быть собой.</p>
+      </blockquote>
+      <!-- ТЕКСТ: описание проекта (из брифа) -->
+      <p class="about">«Тихий мозг» — медиа и простые браузерные инструменты для взрослых с СДВГ и для всех, кому знакомы трудности с запуском задач, концентрацией, сенсорной перегрузкой и саморегуляцией. Мы соединяем спокойный контент, фоновые звуки и маленькие действия.</p>
+    </div>
+  </section>
+
+  <!-- ===================== ЧТО ПОЯВИТСЯ ДАЛЬШЕ ===================== -->
+  <section class="block" id="dalshe" aria-labelledby="next-h">
+    <div class="wrap wrap--text">
+      <h2 id="next-h">Что появится дальше</h2>
+      <!-- ТЕКСТ: пояснение -->
+      <p class="block__text">Добавляем по одному инструменту и сначала проверяем, удобен ли предыдущий. Всё без аккаунта.</p>
+      <ul class="next">
+        <!-- ТЕКСТ: будущие инструменты (из брифа) -->
+        <li><h3>Сделай шаг</h3><p>Пишешь задачу и получаешь три маленьких шага. Их можно поправить и отметить. Текст не покидает браузер.</p></li>
+        <li><h3>Фокус</h3><p>Таймер 15/3, 25/5 или 50/10, с паузой и пропуском. Можно включить тихое присутствие рядом.</p></li>
+        <li><h3>Звуки</h3><p>Коричневый и розовый шум, дождь, лес. Своя громкость и понятная кнопка остановки.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== ГДЕ ЕЩЁ МЫ ЕСТЬ ===================== -->
+  <section class="block" id="kanaly" aria-labelledby="ch-h">
+    <div class="wrap wrap--text">
+      <h2 id="ch-h">Где ещё мы есть</h2>
+      <ul class="channels">
+        <li><a href="https://www.youtube.com/@tihiymozg" target="_blank" rel="noopener">YouTube<span class="visually-hidden"> (откроется в новой вкладке)</span></a><p>Длинные фокус-сессии и спокойные объяснения.</p></li>
+        <!-- TODO: ссылка на Telegram-канал «Тихий мозг» -->
+        <li><a href="#todo-telegram" data-todo="telegram">Telegram <small>скоро</small></a><p>Короткая мягкая поддержка каждый день.</p></li>
+        <li><a href="https://www.instagram.com/tihiymozg/" target="_blank" rel="noopener">Instagram<span class="visually-hidden"> (откроется в новой вкладке)</span></a><p>Карусели и сторис.</p></li>
+        <!-- TODO: ссылка на сообщество VK «Тихий мозг» -->
+        <li><a href="#todo-vk" data-todo="vk">ВКонтакте <small>скоро</small></a></li>
+        <!-- TODO: ссылка на Дзен «Тихий мозг» -->
+        <li><a href="#todo-dzen" data-todo="dzen">Дзен <small>скоро</small></a><p>Подробные статьи.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== ПРИВАТНОСТЬ ===================== -->
+  <section class="block" id="privatnost" aria-labelledby="priv-h">
+    <div class="wrap wrap--text">
+      <h2 id="priv-h">Приватность</h2>
+      <!-- ТЕКСТ: короткая политика приватности -->
+      <p class="block__text">Без аккаунта и регистрации. Мы не собираем диагнозы, симптомы и тексты задач. Настройки (громкость, тема, режим без движения) хранятся только в твоём браузере. На странице нет рекламы, трекеров, аналитики и cookies, внешние скрипты не подгружаются.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap wrap--text">
+    <div class="foot__line" aria-hidden="true"><span></span></div>
+    <!-- ТЕКСТ: медицинский дисклеймер (обязательный) -->
+    <p class="foot__disclaimer" id="disclaimer"><strong>Тихий мозг — медиа и простые инструменты, а не медицинская услуга.</strong> Материалы не заменяют консультацию врача и медицинскую помощь. Если состояние ухудшается или ты в кризисе, обратись за профессиональной или экстренной помощью: <a href="tel:112">112</a>.</p>
+    <!-- TODO: контакт для связи (почта) -->
+    <p class="foot__small">Связаться: почта появится скоро</p>
+    <p class="foot__small">© 2026 Тихий мозг, тихиймозг.рф</p>
+  </div>
+</footer>
+
+<!-- ===================== ЭКРАН ПАУЗЫ (открывается кнопкой) ===================== -->
+<div class="reset" id="reset" role="dialog" aria-modal="true" aria-labelledby="resetTitle" hidden>
+  <h2 id="resetTitle" class="visually-hidden">Пауза 60 секунд</h2>
+
+  <div class="reset__top">
+    <div class="sound" id="sound">
+      <button type="button" class="pill" id="soundOn">Включить мягкий фон</button>
+      <div class="sound__ctrl" id="soundCtrl" hidden>
+        <label class="sound__vol"><span class="visually-hidden">Громкость</span>
+          <input type="range" id="soundVol" min="0" max="100" step="5" value="30">
+        </label>
+        <button type="button" class="pill" id="soundOff">Выключить звук</button>
+      </div>
+      <!-- ТЕКСТ: предупреждение про наушники -->
+      <p class="sound__hint" id="soundHint" role="status">Если ты в наушниках, начни с тихой громкости.</p>
+    </div>
+  </div>
+
+  <div class="reset__stage">
+    <div class="circle" id="circle" aria-hidden="true"><span class="circle__dot"></span></div>
+    <!-- ТЕКСТ: подсказки во время паузы (из брифа). Меняются по очереди -->
+    <p class="reset__prompt" id="resetPrompt" aria-live="polite"
+       data-prompts='["Можно просто смотреть на круг. Дыхание менять не нужно.", "Если сейчас безопасно, попробуй заметить опору под ногами.", "Посмотри на одну точку.", "Если комфортно, сделай выдох чуть длиннее."]'></p>
+    <button type="button" class="link-btn" id="textToggle">Скрыть подсказки</button>
+  </div>
+
+  <div class="reset__bottom">
+    <div class="progress" aria-hidden="true"><span class="progress__fill" id="progressFill"></span><span class="progress__dot" id="progressDot"></span></div>
+    <p class="reset__time" id="resetTime" role="timer" aria-live="off">60 с</p>
+
+    <div class="reset__controls" id="runControls">
+      <button type="button" class="btn btn--solid" id="resetPause">Пауза</button>
+      <button type="button" class="btn" id="resetSkip">Пропустить</button>
+      <button type="button" class="btn" id="resetStop">Остановить</button>
+    </div>
+
+    <div class="reset__end" id="endControls" hidden>
+      <!-- ТЕКСТ: экран завершения (из брифа) -->
+      <p class="reset__done" id="resetDone" tabindex="-1">Готово. Хочешь остаться, повторить или перейти к одному маленькому шагу?</p>
+      <div class="reset__controls">
+        <button type="button" class="btn btn--solid btn--wide" id="resetStep">Один маленький шаг</button>
+        <button type="button" class="btn" id="resetStay">Остаться</button>
+        <button type="button" class="btn" id="resetAgain">Повторить</button>
+        <button type="button" class="btn btn--ghost" id="resetExit">Выйти</button>
+      </div>
+    </div>
+
+    <div class="reset__step" id="stepBox" hidden>
+      <!-- ТЕКСТ: варианты одного шага (из сценариев брифа) -->
+      <p class="reset__done" id="stepTitle" tabindex="-1">Выбери один шаг. Один шаг — уже начало.</p>
+      <ul class="steps">
+        <li>Открой файл, который нужен для дела.</li>
+        <li>Положи нужную вещь на стол.</li>
+        <li>Оставь одну вкладку, нужную для следующего действия.</li>
+      </ul>
+      <div class="reset__controls">
+        <button type="button" class="btn btn--solid" id="stepExit">Выйти</button>
+      </div>
+    </div>
+
+    <div class="reset__stay" id="stayBox" hidden>
+      <!-- ТЕКСТ: режим «остаться» -->
+      <p class="reset__done" id="stayTitle" tabindex="-1">Оставайся сколько нужно.</p>
+      <div class="reset__controls">
+        <button type="button" class="btn btn--solid" id="stayExit">Выйти</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
